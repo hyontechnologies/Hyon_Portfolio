@@ -784,6 +784,40 @@ export const servicesData: ServiceDetail[] = [
   },
 
   {
+    slug: "invoice-billing-automation",
+    title: "Invoice & Billing Automation",
+    tagline: "Smart Invoicing — Zero Manual Input",
+    description: "Intelligent billing systems that use AI for data extraction, automated GST-compliant invoicing, and multi-channel payment reminders.",
+    heroGradient: "from-amber-900 via-orange-900 to-red-900",
+    accentColor: "orange",
+    icon: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z",
+    overview: "Manual invoicing and billing cycles are the primary bottlenecks in scaling service businesses. We build intelligent invoice and billing automation systems that use AI to extract data from purchase orders and contracts, trigger GST-compliant invoices across multiple platforms, and manage automated payment reminders via WhatsApp and email. Your billing becomes a background process, ensuring your cash flow remains consistent and accurate without human intervention.",
+    capabilities: [
+      { title: "AI Data Extraction", description: "Automatically extract line items, amounts, and vendor details from PDFs and scanned documents using advanced OCR.", metric: "99%", metricLabel: "Accuracy" },
+      { title: "Automated Reminders", description: "Smart notification sequences across WhatsApp, Email, and SMS that escalate as due dates approach — reducing DSOs significantly.", metric: "Zero", metricLabel: "Manual Follow-up" },
+      { title: "API-Driven Invoicing", description: "Generate invoices instantly from CRM events, project milestones, or external API triggers without human data entry.", metric: "Instant", metricLabel: "Billing Trigger" },
+      { title: "GST Compliance Engine", description: "Automated GST calculation, HSN/SAC mapping, and GSTR-ready data exports integrated into every invoice.", metric: "100%", metricLabel: "Compliance" },
+    ],
+    useCases: [
+      { industry: "Professional Services", challenge: "Consulting firm spending 12 hours weekly manually matching billable hours to GST-compliant invoices.", solution: "Automated billing engine linking timesheets to GST invoice generation with automated client reminders.", outcome: "Invoicing time reduced from 12 hours to 15 minutes weekly. Payment cycle speed improved by 22%." },
+    ],
+    stats: [
+      { value: "99%", label: "OCR Accuracy" },
+      { value: "Zero", label: "Manual Effort" },
+      { value: "22%", label: "Faster Payments" },
+      { value: "100%", label: "Compliance" },
+    ],
+    technologies: ["Node.js", "PostgreSQL", "Tesseract AI", "Razorpay API", "WhatsApp Business API", "n8n"],
+    process: [
+      { step: "01", title: "Map", description: "We map your current billing workflow, approval stages, and taxation requirements." },
+      { step: "02", title: "Extract", description: "AI engine configured to read your specific POs, contracts, or timesheets accurately." },
+      { step: "03", title: "Integrate", description: "System connected to your CRM, bank, and notification channels for end-to-end flow." },
+      { step: "04", title: "Launch", description: "Automated billing live with daily reconciliation reports sent to your finance team." },
+    ],
+    cta: { primary: "Automate My Billing", secondary: "See AI Invoice Demo" },
+  },
+
+  {
     slug: "no-code-low-code-automation",
     title: "No-code / Low-code Automation Solutions",
     tagline: "Powerful Automation — Without Writing a Single Line",
