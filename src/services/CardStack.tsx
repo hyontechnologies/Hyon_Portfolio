@@ -3,8 +3,8 @@
 import * as React from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { SquareArrowOutUpRight } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 function cn(...classes: Array<string | undefined | null | false>) {
   return classes.filter(Boolean).join(" ");
@@ -83,6 +83,7 @@ export function CardStack<T extends CardStackItem>({
   onChangeIndex,
   renderCard,
 }: CardStackProps<T>) {
+  const router = useRouter();
   const reduceMotion = useReducedMotion();
   const len = items.length;
 
@@ -162,7 +163,7 @@ export function CardStack<T extends CardStackItem>({
       onMouseLeave={() => setHovering(false)}
     >
       <div
-        className="relative w-full overflow-visible"
+        className="relative w-full"
         style={{ height: Math.max(380, cardHeight + 80) }}
         tabIndex={0}
         onKeyDown={onKeyDown}
@@ -254,24 +255,24 @@ export function CardStack<T extends CardStackItem>({
                   }
                   animate={{
                     opacity: 1,
-                    filter: "blur(0px)",
                     x,
                     y: y + lift,
                     rotateZ,
                     rotateX,
                     scale,
                   }}
-                  whileHover={
-                    isActive
-                      ? { y: y + lift - 8, scale: activeScale + 0.02, transition: { duration: 0.25 } }
-                      : undefined
-                  }
                   transition={{
                     type: "spring",
                     stiffness: springStiffness,
                     damping: springDamping,
                   }}
-                  onClick={() => setActive(i)}
+                  onClick={() => {
+                    if (isActive && item.href) {
+                      router.push(item.href);
+                    } else {
+                      setActive(i);
+                    }
+                  }}
                   {...dragProps}
                 >
                   <div
@@ -336,15 +337,12 @@ function DefaultFanCard({ item }: { item: CardStackItem; active: boolean }) {
     <div className="relative h-full w-full">
       <div className="absolute inset-0">
         {item.imageSrc ? (
-          <Image
+          <img
             src={item.imageSrc}
             alt={item.title}
-            fill
-            className="object-cover"
+            className="h-full w-full object-cover"
             draggable={false}
-            quality={100}
-            sizes="(max-width: 768px) 100vw, 1024px"
-            priority
+            loading="eager"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-secondary text-sm text-muted-foreground">
@@ -356,9 +354,9 @@ function DefaultFanCard({ item }: { item: CardStackItem; active: boolean }) {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
       <div className="relative z-10 flex h-full flex-col justify-end p-5">
-        <h3 className="truncate text-lg font-semibold text-white">
+        <div className="truncate text-lg font-semibold text-white">
           {item.title}
-        </h3>
+        </div>
         {item.description ? (
           <div className="mt-1 line-clamp-2 text-sm text-white/80">
             {item.description}

@@ -151,6 +151,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={cn(
         "dark overscroll-none bg-[#0a0118]",
         "font-sans",
@@ -177,7 +178,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
         />
       </head>
-      <body className="antialiased min-h-screen bg-[#0a0118] text-foreground overflow-x-hidden overscroll-none">
+      <body className="antialiased min-h-screen bg-[#0a0118] text-foreground overflow-y-auto overscroll-none relative" style={{ position: 'relative' }}>
         {children}
       </body>
     </html>

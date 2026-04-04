@@ -16,7 +16,7 @@ const projects: Project[] = [
     name: "Sri Lakshmi Bhavan Restaurant",
     description:
       "A complete digital presence for a beloved restaurant — featuring online menus, reservation systems, and a brand identity that captures their authentic culinary heritage.",
-    url: "https://google.com",
+    url: "https://restaturent-onuo.vercel.app/",
     gradient: "linear-gradient(135deg, #021A54 0%, #134E8E 100%)",
   },
   {
@@ -50,7 +50,7 @@ export const ProjectsModal = ({
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative w-full max-w-2xl p-6 sm:p-8 rounded-3xl bg-[#0d041c] border border-purple-500/30 shadow-[0_0_40px_rgba(168,85,247,0.2)]"
+            className="relative w-full max-w-2xl p-5 sm:p-8 rounded-3xl bg-[#0d041c] border border-purple-500/30 shadow-[0_0_40px_rgba(168,85,247,0.2)] modal-scroll"
           >
             <button
               onClick={onClose}

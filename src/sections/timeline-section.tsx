@@ -67,7 +67,7 @@ function TimelineContent({ item, isExpanded, toggleItem, align, timelineData }: 
 
   return (
     <Card
-      className={`bg-[#0a0118]/90 backdrop-blur-xl border-white/20 shadow-2xl shadow-purple-500/20 w-full md:w-[28rem] ${align === "left" ? "origin-left" : "origin-right"} animate-in zoom-in-95 duration-300 relative z-30`}
+      className={`bg-[#0a0118]/90 backdrop-blur-xl border-white/20 shadow-2xl shadow-purple-500/20 w-full max-w-[28rem] ${align === "left" ? "origin-left" : "origin-right"} animate-in zoom-in-95 duration-300 relative z-30`}
       onClick={(e) => e.stopPropagation()}
     >
       <CardHeader className="pb-2 text-left">
@@ -190,7 +190,7 @@ export default function RadialOrbitalTimeline({
 
   return (
     <div
-      className="w-full min-h-[800px] bg-transparent py-16 px-4 overflow-hidden"
+      className="w-full min-h-[500px] bg-transparent py-12 sm:py-16 px-4 sm:px-6 overflow-hidden"
       onClick={handleContainerClick}
       ref={containerRef}
     >
@@ -214,7 +214,7 @@ export default function RadialOrbitalTimeline({
 
                 {/* Node on central line */}
                 <div
-                  className="absolute left-10 md:left-1/2 -translate-x-1/2 flex items-center justify-center z-20 cursor-pointer"
+                  className="absolute left-[38px] md:left-1/2 -translate-x-1/2 flex items-center justify-center z-20 cursor-pointer touch-manipulation"
                   onClick={(e) => { e.stopPropagation(); toggleItem(item.id); }}
                 >
                   {/* Glow effect based on energy */}

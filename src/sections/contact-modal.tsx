@@ -3,11 +3,17 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send } from "lucide-react";
+import { createPortal } from "react-dom";
 
 export const ContactModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [statusMessage, setStatusMessage] = useState("");
   const [isError, setIsError] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -60,10 +66,10 @@ export const ContactModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: ()
     }
   };
 
-  return (
+  const modalContent = (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden px-4">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden px-4" style={{ position: "fixed" }}>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -75,7 +81,7 @@ export const ContactModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: ()
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative w-full max-w-lg p-6 sm:p-8 rounded-3xl bg-[#0d041c] border border-purple-500/30 shadow-[0_0_40px_rgba(168,85,247,0.2)]"
+            className="relative w-full max-w-lg p-5 sm:p-8 rounded-3xl bg-[#0d041c] border border-purple-500/30 shadow-[0_0_40px_rgba(168,85,247,0.2)] modal-scroll"
           >
             <button
               onClick={onClose}
@@ -155,4 +161,6 @@ export const ContactModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: ()
       )}
     </AnimatePresence>
   );
+
+  return mounted ? createPortal(modalContent, document.body) : null;
 };

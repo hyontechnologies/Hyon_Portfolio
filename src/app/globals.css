@@ -74,10 +74,17 @@
   text-shadow: 0 0 40px rgba(168, 85, 247, 0.5), 0 0 80px rgba(168, 85, 247, 0.3);
 }
 
-/* Smooth scrolling and remove overscroll bounce */
+/* Smooth scrolling boundaries and remove overscroll bounce */
 html {
   scroll-behavior: smooth;
   overscroll-behavior: none;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
 }
 
 /* Respect prefers-reduced-motion for accessibility & CLS */
@@ -115,9 +122,41 @@ section[id] {
   will-change: transform;
 }
 
-/* Optimized image containers */
-img {
-  content-visibility: auto;
+/* Touch device: disable hover-dependent effects */
+@media (hover: none) {
+  .hover-only {
+    display: none !important;
+  }
+}
+
+/* 3D extruded text effect for brand logo */
+.text-3d {
+  color: #ffffff;
+  font-style: italic;
+  font-weight: 800;
+  text-shadow:
+    1px 1px 0px #d1d1d1,
+    2px 2px 0px #b8b8b8,
+    3px 3px 0px #9e9e9e,
+    4px 4px 0px #858585,
+    5px 5px 0px #6b6b6b,
+    6px 6px 8px rgba(0, 0, 0, 0.4),
+    6px 6px 20px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.04em;
+}
+
+/* Safe area for bottom navigation on notched devices */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Modal scroll containment */
+.modal-scroll {
+  max-height: 90vh;
+  max-height: 90dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 @theme inline {
