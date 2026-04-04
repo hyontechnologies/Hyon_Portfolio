@@ -3,7 +3,7 @@ import "./globals.css";
 import { Geist } from "next/font/google";
 import { Space_Grotesk } from "next/font/google";
 import { cn } from "@/lib/utils";
-import Script from "next/script";
+
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
 const spaceGrotesk = Space_Grotesk({
@@ -90,12 +90,12 @@ export const viewport: Viewport = {
 
 // ─── JSON-LD Structured Data ───────────────────────────────────────────────
 
-const jsonLd = {
+const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Hyon Technologies",
   url: "https://hyon.tech",
-  logo: "https://hyon.tech/logo.png",
+  logo: "https://hyon.tech/HYON-TECHNOLOGIES-4-3-2026.png",
   description:
     "Next generation IT solutions for startups and growing businesses. Custom software development, AI automation, and cloud architecture.",
   contactPoint: {
@@ -104,16 +104,11 @@ const jsonLd = {
     availableLanguage: ["English"],
   },
   sameAs: [
-    "https://github.com",
-    "https://linkedin.com",
-    "https://instagram.com",
-    "https://youtube.com",
+    "https://github.com/hyontechnologies",
+    "https://www.linkedin.com/company/hyon-technologies/",
+    "https://www.instagram.com/hyon_technologies",
+    "https://x.com/Hyon_tech",
   ],
-  offers: {
-    "@type": "AggregateOffer",
-    description: "IT Solutions and Software Development Services",
-    offerCount: 6,
-  },
 };
 
 const serviceJsonLd = {
@@ -123,6 +118,7 @@ const serviceJsonLd = {
   provider: {
     "@type": "Organization",
     name: "Hyon Technologies",
+    url: "https://hyon.tech",
   },
   description:
     "Custom software development, AI automation, data analytics, and industry-specific smart platforms.",
@@ -138,6 +134,18 @@ const serviceJsonLd = {
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Business Productivity & Communication Platforms" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Industry-Specific Smart Platforms" } },
     ],
+  },
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Hyon Technologies",
+  url: "https://hyon.tech",
+  description: "Next generation IT solutions for startups and growing businesses.",
+  publisher: {
+    "@type": "Organization",
+    name: "Hyon Technologies",
   },
 };
 
@@ -163,19 +171,21 @@ export default function RootLayout({
       <head>
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
         <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
 
-        {/* JSON-LD Structured Data for SEO */}
-        <Script
-          id="org-jsonld"
+        {/* JSON-LD Structured Data — inline for crawler visibility */}
+        <script
           type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
-        <Script
-          id="service-jsonld"
+        <script
           type="application/ld+json"
-          strategy="afterInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body className="antialiased min-h-screen bg-[#0a0118] text-foreground overflow-y-auto overscroll-none relative" style={{ position: 'relative' }}>

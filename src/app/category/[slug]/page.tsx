@@ -25,7 +25,17 @@ export async function generateMetadata({
   return {
     title: `${cat.title} — Services`,
     description: cat.tagline,
+    alternates: {
+      canonical: `https://hyon.tech/category/${slug}`,
+    },
     openGraph: {
+      title: `${cat.title} | Hyon Technologies`,
+      description: cat.tagline,
+      url: `https://hyon.tech/category/${slug}`,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
       title: `${cat.title} | Hyon Technologies`,
       description: cat.tagline,
     },
@@ -43,8 +53,48 @@ export default async function CategoryPage({
   const category = getCategoryBySlug(slug);
   if (!category) return notFound();
 
+  // ─── JSON-LD Schemas ──────────────────────────────────────────────────────
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://hyon.tech" },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: category.title,
+        item: `https://hyon.tech/category/${slug}`,
+      },
+    ],
+  };
+
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `${category.title} Services`,
+    description: category.tagline,
+    numberOfItems: category.services.length,
+    itemListElement: category.services.map((service, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: service.label,
+      url: `https://hyon.tech/services/${service.slug}`,
+    })),
+  };
+
   return (
     <main className="relative min-h-screen bg-[#0a0118] text-white overflow-x-hidden">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
+
       {/* Fixed background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0a0118] via-[#120428] to-[#0d0220]" />

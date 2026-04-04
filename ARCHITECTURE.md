@@ -50,3 +50,23 @@ const rawVideoUrl = getCloudinaryVideoUrl('hero-loop-video');
 - **D.R.Y (Don’t Repeat Yourself)**: If a specific UI button or layout block is used more than twice, extract it to `src/components/ui`.
 - **Vertical Slices for Sections**: If building a large portion of a landing page (like the Features Grid or Testimonials layout), build it within a new file in `src/sections/`. Keep `src/app/page.tsx` as mostly imports of Section wrappers.
 - **Dangling Files**: Do not commit commented-out `.bak` files, dead scripts, or untested features. Keep the tree pruned.
++
++## SEO & Performance Architecture
++
++### Search Engine Optimization (SEO)
++
++We have implemented a robust, automated SEO system designed for maximum crawlability and search visibility:
++
++- **Dynamic Sitemap (`src/app/sitemap.ts`)**: Automatically generates a `sitemap.xml` containing all static pages, category detail pages, and individual service pages. This ensures every deep link is indexed.
++- **Robots.txt (`src/app/robots.ts`)**: Dynamically serves `robots.txt` using the Next.js Metadata API, pointing to the sitemap and managing crawler access.
++- **Structured Data (JSON-LD)**: We use inline JSON-LD scripts in the `<head>` (via `layout.tsx` and detail pages) rather than `afterInteractive` scripts. This ensures that search engine crawlers can see the structured data in the initial HTML response.
++- **Metadata API**: All pages leverage the Next.js Metadata API for dynamic titles, descriptions, canonical URLs, and Open Graph/Twitter tags.
++
++### Homepage SSR Refactor (Server/Client Split)
++
++To balance high-performance WebGL animations with SEO requirements, the homepage follows a specific split:
++
++1.  **`src/app/page.tsx` (Server Component)**: The entry point is a Server Component. This allows us to export static `metadata` and perform server-side rendering of the initial page shell.
++2.  **`src/app/HomeClient.tsx` (Client Component)**: Contains the interactive logic, Framer Motion animations, and WebGL overlays.
++3.  **Selective SSR for Sections**: Heavy interactive sections like `FeaturesCards`, `ClientsSection`, and `RadialOrbitalTimeline` are dynamically imported *with* SSR enabled. This ensures that their text content and internal links are present in the initial HTML for SEO, while the JavaScript hydration happens on the client.
++4.  **No-SSR for WebGL**: Graphics-heavy components (e.g., `Galaxy`, `OrbRenderer`) use `ssr: false` to prevent server-side errors and reduce the initial bundle size.

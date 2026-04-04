@@ -1,4 +1,4 @@
-export type ServiceDetail = {
+﻿export type ServiceDetail = {
   slug: string;
   title: string;
   tagline: string;

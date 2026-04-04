@@ -25,7 +25,17 @@ export async function generateMetadata({
   return {
     title: service.title,
     description: service.description,
+    alternates: {
+      canonical: `https://hyon.tech/services/${slug}`,
+    },
     openGraph: {
+      title: `${service.title} | Hyon Technologies`,
+      description: service.description,
+      url: `https://hyon.tech/services/${slug}`,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
       title: `${service.title} | Hyon Technologies`,
       description: service.description,
     },
@@ -77,8 +87,65 @@ export default async function ServicePage({
   const parent = getParentCategory(slug);
   const accent = getAccent(service.accentColor);
 
+  // ─── JSON-LD Schemas ──────────────────────────────────────────────────────
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://hyon.tech" },
+      ...(parent
+        ? [
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: parent.title,
+              item: `https://hyon.tech/category/${parent.slug}`,
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: service.title,
+              item: `https://hyon.tech/services/${slug}`,
+            },
+          ]
+        : [
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: service.title,
+              item: `https://hyon.tech/services/${slug}`,
+            },
+          ]),
+    ],
+  };
+
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.description,
+    provider: {
+      "@type": "Organization",
+      name: "Hyon Technologies",
+      url: "https://hyon.tech",
+    },
+    areaServed: "Worldwide",
+    serviceType: service.title,
+  };
+
   return (
     <main className="relative min-h-screen bg-[#0a0118] text-white overflow-x-hidden">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+
       {/* Fixed background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className={`absolute inset-0 bg-gradient-to-br ${service.heroGradient}`} />
@@ -90,7 +157,7 @@ export default async function ServicePage({
       <section className="relative z-10 pt-24 pb-16 px-4">
         <div className="max-w-5xl mx-auto">
           {/* Breadcrumb */}
-          <nav className="flex flex-wrap items-center gap-2 text-sm text-gray-400 mb-10">
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-gray-400 mb-10">
             <Link href="/" className="hover:text-purple-400 transition-colors">Home</Link>
             <span className="text-gray-600">/</span>
             {parent && (
