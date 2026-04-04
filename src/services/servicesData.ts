@@ -34,7 +34,7 @@ export const servicesData: ServiceDetail[] = [
   {
     slug: "web-application-development",
     title: "Web Application Development",
-    tagline: "Powerful Web Apps â€” Built to Scale",
+    tagline: "Powerful Web Apps — Built to Scale",
     description:
       "End-to-end web applications engineered for performance, security, and seamless user experience across devices.",
     heroGradient: "from-blue-900 via-indigo-900 to-violet-900",
@@ -274,7 +274,7 @@ export const servicesData: ServiceDetail[] = [
   {
     slug: "micro-saas-development",
     title: "Micro SaaS Development",
-    tagline: "Your SaaS Idea â€” Shipped Fast, Built Right",
+    tagline: "Your SaaS Idea — Shipped Fast, Built Right",
     description:
       "We turn focused SaaS product ideas into revenue-generating platforms with subscription billing, multi-tenancy, and growth-ready architecture.",
     heroGradient: "from-violet-900 via-purple-900 to-fuchsia-900",
@@ -2269,6 +2269,108 @@ export const servicesData: ServiceDetail[] = [
       { step: "04", title: "Launch", description: "Platform soft-launched with a sample season of bookings before full marketing push." },
     ],
     cta: { primary: "Build My Travel Platform", secondary: "See Travel Demo" },
+  },
+
+  {
+    slug: "school-management-system",
+    title: "School Management System",
+    tagline: "Empower Your Institution — Automate Academic Excellence",
+    description: "A comprehensive digital ecosystem for educational institutions to manage students, staff, fees, and academic performance with ease.",
+    heroGradient: "from-indigo-900 via-blue-900 to-sky-900",
+    accentColor: "indigo",
+    icon: "M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z",
+    overview: "Managing a modern educational institution involves a complex web of student records, fee collections, academic schedules, and parent communication. We build unified school management platforms that digitize the entire campus. From student onboarding and automated attendance to fee portals and examination management, our systems provide leadership with real-time visibility while reducing administrative overhead.",
+    capabilities: [
+      { title: "Student Lifecycle Management", description: "Manage students from enquiry and admission through to graduation and alumni tracking — all in one unified record.", metric: "Full", metricLabel: "Student Lifecycle" },
+      { title: "Fee & Financial Automation", description: "Automated fee invoicing, online collections, scholarship management, and detailed financial reporting.", metric: "Zero", metricLabel: "Fee Leakage" },
+      { title: "Academic & Exam Management", description: "Digital gradebooks, automated report card generation, and secure online examination modules.", metric: "Smart", metricLabel: "Academic Tracking" },
+      { title: "Parent-Teacher Engagement", description: "Dedicated mobile app and portal for parents to track progress, attendance, and school announcements in real-time.", metric: "Real-time", metricLabel: "Communication" },
+    ],
+    useCases: [
+      { industry: "K-12 School", challenge: "School managing 1,500 students with manual fee records and paper report cards causing administrative chaos.", solution: "Integrated school platform with automated fee collection and digital academic tracking.", outcome: "Fee recovery improved by 18%. Staff administrative work reduced by 60%." },
+    ],
+    stats: [
+      { value: "Zero", label: "Fee Leakage" },
+      { value: "60%", label: "Admin Time Saved" },
+      { value: "100%", label: "Digital Records" },
+      { value: "Auto", label: "Results Ready" },
+    ],
+    technologies: ["React", "Node.js", "PostgreSQL", "Redis", "PDFKit", "Razorpay"],
+    process: [
+      { step: "01", title: "Setup", description: "Student cohorts, classes, fee structures, and staff roles configured before launch." },
+      { step: "02", title: "Migrate", description: "Existing student and financial records imported with full history preservation." },
+      { step: "03", title: "Train", description: "Teachers, admin staff, and management trained on their respective platform views." },
+      { step: "04", title: "Go Live", description: "Parent login links activated and seasonal fee collection automated." },
+    ],
+    cta: { primary: "Modernise My School", secondary: "Request School Demo" },
+  },
+
+  {
+    slug: "healthcare-clinic-system",
+    title: "Healthcare & Clinic System",
+    tagline: "Patient-First Care — Powered by Digital Precision",
+    description: "A secure, compliant healthcare platform that unifies patient records, appointment booking, billing, and lab results for clinics and hospitals.",
+    heroGradient: "from-blue-900 via-sky-900 to-cyan-900",
+    accentColor: "blue",
+    icon: "M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-2v-4H8v-2h4V8h2v4h4v2z",
+    overview: "In the fast-paced healthcare environment, clinicians and administrators need a single source of truth for patient health. We build comprehensive healthcare and clinic systems that integrate electronic medical records (EMR), appointment scheduling, billing, and lab results into one secure, compliant platform. Our tools enhance patient care by reducing paper trails and ensuring critical information is always at your fingertips.",
+    capabilities: [
+      { title: "EMR & Patient Records", description: "Complete digital medical history, clinical notes, prescription history, and visit records in a secure environment.", metric: "Full", metricLabel: "Medical History" },
+      { title: "Intelligent Scheduling", description: "Multi-doctor appointment scheduling with automated reminders and patient self-booking portal.", metric: "60%", metricLabel: "Fewer No-shows" },
+      { title: "Billing & Insurance", description: "Integrated billing with insurance claim tracking, pharmacy sales, and lab service invoicing.", metric: "Instant", metricLabel: "Invoicing" },
+      { title: "Tele-medicine Ready", description: "Built-in video consultation capability with patient chat and secure document sharing.", metric: "Ready", metricLabel: "Tele-health" },
+    ],
+    useCases: [
+      { industry: "Multi-Speciality Clinic", challenge: "Doctors spending more time on paper files than patients; front desk overwhelmed by calls.", solution: "EMR-first clinic system with patient self-booking and automated lab result delivery.", outcome: "Patient wait time reduced by 40%. Doctor daily productivity increased by 22%." },
+    ],
+    stats: [
+      { value: "40%", label: "Wait Time Reduction" },
+      { value: "60%", label: "Fewer No-shows" },
+      { value: "100%", label: "Secure Records" },
+      { value: "24/7", label: "Patient Access" },
+    ],
+    technologies: ["React", "Node.js", "PostgreSQL", "Redis", "AWS S3", "Twilio", "WebRTC"],
+    process: [
+      { step: "01", title: "Audit", description: "Clinic workflows, speciality requirements, and reporting needs mapped precisely." },
+      { step: "02", title: "Configure", description: "Medical forms, ICD codes, and doctor schedules set up for the clinic." },
+      { step: "03", title: "Secure", description: "GDPR/HIPAA compliance checks and data encryption protocols activated." },
+      { step: "04", title: "Switch", description: "Phased rollout starting with front-desk followed by doctor and lab modules." },
+    ],
+    cta: { primary: "Upgrade My Clinic", secondary: "See Healthcare Demo" },
+  },
+
+  {
+    slug: "real-estate-platform",
+    title: "Real-estate Platform",
+    tagline: "Sell Faster — Manage Smarter",
+    description: "An end-to-end real estate ecosystem for developers and agencies to manage inventory, leads, site visits, and sales closures.",
+    heroGradient: "from-emerald-900 via-teal-900 to-cyan-900",
+    accentColor: "emerald",
+    icon: "M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z",
+    overview: "The real estate industry thrives on leads, inventory management, and relationship building. We create end-to-end real estate platforms that connect agents, builders, and buyers seamlessly. From property listing management and automated lead scoring to site visit tracking and digital agreement generation, our systems give your sales team the edge they need to close deals in a competitive market.",
+    capabilities: [
+      { title: "Inventory Management", description: "Real-time tracking of property units, status (booked/sold/available), and pricing across multiple projects.", metric: "Live", metricLabel: "Unit Inventory" },
+      { title: "Smart Lead Scoring", description: "Capture leads from websites and portals, scoring them automatically to prioritise high-intent buyers.", metric: "Auto", metricLabel: "Lead Prioritisation" },
+      { title: "Site Visit Coordinator", description: "Digital logging of site visits, feedback collection, and automated follow-up triggers for sales reps.", metric: "40%", metricLabel: "More Closures" },
+      { title: "Agreement Automation", description: "Generate booking forms and sale agreements automatically from approved lead data.", metric: "Instant", metricLabel: "Agreement Ready" },
+    ],
+    useCases: [
+      { industry: "Property Developer", challenge: "Sales team managing 500+ daily leads via spreadsheets; inventory status frequently outdated.", solution: "Real-time inventory dashboard with automated lead routing and pipeline tracking.", outcome: "Inventory sales velocity increased by 25%. Zero double-booking errors." },
+    ],
+    stats: [
+      { value: "Live", label: "Inventory Tracker" },
+      { value: "40%", label: "Faster Closings" },
+      { value: "Zero", label: "Booking Errors" },
+      { value: "24/7", label: "Lead Capture" },
+    ],
+    technologies: ["React", "Node.js", "PostgreSQL", "Redis", "PDFKit", "WhatsApp Business API"],
+    process: [
+      { step: "01", title: "Map", description: "Inventory structure, sales stages, and lead sources mapped for the platform." },
+      { step: "02", title: "Build", description: "Project dashboards, inventory engines, and lead portals customised for your brand." },
+      { step: "03", title: "Connect", description: "Portals (99acres, Magicbricks, etc.) and social channels connected for lead sync." },
+      { step: "04", title: "Sell", description: "Sales team onboarded and live dashboard activated for leadership overview." },
+    ],
+    cta: { primary: "Accelerate My Sales", secondary: "Request Real Estate Demo" },
   },
 
   {

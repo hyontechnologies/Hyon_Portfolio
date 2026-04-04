@@ -119,7 +119,7 @@ export const categoriesData: CategoryDetail[] = [
       { label: "School Management System", slug: "school-management-system" },
       { label: "Healthcare & Clinic System", slug: "healthcare-clinic-system" },
       { label: "Real-estate Platform", slug: "real-estate-platform" },
-      { label: "Gym & Fitness Management", slug: "gym-fitness-management" },
+      { label: "Gym & Fitness Management", slug: "gym-management-platform" },
       { label: "Salon Management System", slug: "salon-management-system" },
       { label: "Travel & Tourism Platforms", slug: "travel-tourism-platform" },
       { label: "Event Venue Management", slug: "event-venue-management" },
