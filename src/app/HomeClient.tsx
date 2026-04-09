@@ -490,7 +490,7 @@ export default function HomeClient() {
       />
 
       {/* Brand Logo — Extracted out of main to guarantee fixed positioning without transform trapping */}
-      <div className="fixed top-6 left-6 sm:top-8 sm:left-10 z-[9999] pointer-events-none select-none">
+      <div className="fixed top-2 left-6 sm:top-4 sm:left-8 z-[9999] pointer-events-none select-none">
         <Image
           src="/Hyon-Tech.png"
           alt="Hyon Technologies Logo"
