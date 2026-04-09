@@ -446,7 +446,7 @@ export default function HomeClient() {
   const finalPlanetScale = isMobile ? 0.05 : 0.1;
 
   const planetScale = useTransform(scrollYProgress, [0, 1], [initialPlanetScale, finalPlanetScale]);
-  const planetY = useTransform(scrollYProgress, [0, 0.8], ["100%", "125%"]);
+  const planetY = useTransform(scrollYProgress, [0, 0.8], ["100%", "135%"]);
   const planetX = useTransform(scrollYProgress, [0, 0.8], ["0%", "35%"]);
   const planetOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 1]);
 
@@ -476,7 +476,7 @@ export default function HomeClient() {
             "@type": "LocalBusiness",
             "name": "Hyon Technologies",
             "url": "https://hyon.tech",
-            "logo": "https://hyon.tech/HYON-TECHNOLOGIES-4-3-2026.png",
+            "logo": "https://hyon.tech/Hyon-Tech.png",
             "description": "Next generation IT solutions, web development, and affordable software for startups and growing businesses.",
             "foundingDate": "2026",
             "sameAs": [
@@ -490,13 +490,13 @@ export default function HomeClient() {
       />
 
       {/* Brand Logo — Extracted out of main to guarantee fixed positioning without transform trapping */}
-      <div className="fixed top-5 left-5 sm:top-6 sm:left-8 z-[9999] pointer-events-none select-none">
+      <div className="fixed top-6 left-6 sm:top-8 sm:left-10 z-[9999] pointer-events-none select-none">
         <Image
-          src="/HYON-TECHNOLOGIES-4-3-2026.png"
+          src="/Hyon-Tech.png"
           alt="Hyon Technologies Logo"
-          width={260}
-          height={80}
-          className="w-auto h-12 sm:h-16 md:h-20 object-contain filter drop-shadow-[0_0_15px_rgba(168,85,247,0.4)]"
+          width={320}
+          height={100}
+          className="w-auto h-16 sm:h-24 md:h-32 object-contain filter drop-shadow-[0_0_20px_rgba(168,85,247,0.4)]"
           priority
         />
       </div>
@@ -607,18 +607,23 @@ export default function HomeClient() {
               NEXT GENERATION IT SOLUTIONS
             </motion.div>
 
-            {/* Heading */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight max-w-5xl z-10"
+              className="text-xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight max-w-6xl z-10 mx-auto py-10 md:py-14 -mt-12 md:-mt-22 text-center"
             >
-              Powering{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-violet-400 to-purple-300 text-glow">
-                What&apos;s Next !
+              <span className="block">
+                Transform Your Business with
               </span>
-              <span className="sr-only">Hyon Technologies - Next Generation IT Solutions, Web Development & Affordable Software</span>
+
+              <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-violet-400 to-purple-300 text-glow text-2xl sm:text-5xl md:text-6xl lg:text-7xl">
+                AI-Driven IT & Digital Marketing Solutions
+              </span>
+
+              <span className="sr-only">
+                Hyon Technologies - Transform Your Business with AI-Driven IT & Digital Marketing Solutions
+              </span>
             </motion.h1>
 
             {/* CTA Button — repositioned specifically for mobile to sit above navigation */}
@@ -626,7 +631,7 @@ export default function HomeClient() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="z-[9999] absolute bottom-28 left-0 right-0 w-full flex justify-center px-4 sm:relative sm:bottom-auto sm:w-auto sm:mt-16 md:mt-58 pointer-events-auto"
+              className="z-[9999] absolute bottom-28 left-0 right-0 w-full flex justify-center px-4 sm:relative sm:bottom-auto sm:w-auto sm:mt-16 md:mt-32 pointer-events-auto"
             >
               <button
                 onClick={() => setIsContactModalOpen(true)}
@@ -816,7 +821,13 @@ export default function HomeClient() {
               <div className="flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
                 {/* Brand and Internal Links */}
                 <div className="text-center md:text-left">
-                  <h2 className="text-xl font-bold text-purple-400">Hyon Technologies</h2>
+                  <Image
+                    src="/Hyon-Tech.png"
+                    alt="Hyon Technologies Logo"
+                    width={180}
+                    height={60}
+                    className="w-auto h-10 object-contain mb-2"
+                  />
                   <p className="mt-2 text-sm text-gray-500 leading-relaxed max-w-sm mb-4">
                     Next generation IT solutions, web development, and affordable software for startups and growing businesses.
                   </p>

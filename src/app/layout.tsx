@@ -95,7 +95,7 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: "Hyon Technologies",
   url: "https://hyon.tech",
-  logo: "https://hyon.tech/HYON-TECHNOLOGIES-4-3-2026.png",
+  logo: "https://hyon.tech/Hyon-Tech.png",
   description:
     "Next generation IT solutions for startups and growing businesses. Custom software development, AI automation, and cloud architecture.",
   contactPoint: {
