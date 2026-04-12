@@ -111,8 +111,7 @@ const organizationJsonLd = {
     "https://www.instagram.com/hyon_technologies",
     "https://x.com/Hyon_tech"
   ],
-  "foundingDate": "2026",
-  "foundingLocation": "Bengaluru, India"
+  "foundingDate": "2026"
 };
 
 const serviceJsonLd = {

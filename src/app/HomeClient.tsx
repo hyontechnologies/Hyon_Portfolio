@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 
 import Image from "next/image";
+import Link from "next/link";
 import { NavBar } from "@/sections/navbar";
 
 import type { CardStackItem } from "@/components/ui/card-stack";
@@ -480,22 +481,18 @@ export default function HomeClient() {
             "image": "https://hyontechnologies.online/Hyon-Tech.png",
             "description": "Next generation IT solutions, web development, and affordable software for startups and growing businesses.",
             "foundingDate": "2026",
-            "priceRange": "$$ - $$$",
             "telephone": "+91 7200012857, +91 9952470784, +91 9360852889",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Startup Research centre",
-              "addressLocality": "Bengaluru",
-              "addressRegion": "Karnataka",
-              "postalCode": "560037",
               "addressCountry": "IN"
             },
             "openingHoursSpecification": [
               {
                 "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "09:00",
-                "closes": "21:00"
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "00:00",
+                "closes": "23:59"
               }
             ],
             "sameAs": [
@@ -959,7 +956,7 @@ export default function HomeClient() {
                     </li>
                     <li className="flex items-center gap-3">
                       <svg className="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                      <span>Startup Research centre, Bengaluru</span>
+                      <span>Startup Research centre</span>
                     </li>
                   </ul>
                 </div>
