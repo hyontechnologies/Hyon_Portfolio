@@ -846,7 +846,7 @@ export default function HomeClient() {
                   },
                   {
                     q: "How long does a typical software development project take?",
-                    a: "For Micro SaaS or MVP projects, we typically ship in 8-12 weeks. Larger enterprise systems or complex AI integrations follow a phased rollout approach with active releases every 2 weeks."
+                    a: "The development timeline varies depending upon the project and its requirements. Smaller systems typically ship fast, while larger enterprise solutions follow a phased rollout approach."
                   },
                   {
                     q: "Do you offer post-launch support and maintenance?",
@@ -880,7 +880,7 @@ export default function HomeClient() {
                     {
                       "@type": "Question",
                       "name": "How long does a typical software development project take?",
-                      "acceptedAnswer": { "@type": "Answer", "text": "For Micro SaaS or MVP projects, we typically ship in 8-12 weeks. Larger enterprise systems follow a phased rollout." }
+                      "acceptedAnswer": { "@type": "Answer", "text": "The timeline varies depending upon the project. Smaller systems ship faster, while larger enterprise solutions follow a phased rollout." }
                     }
                   ]
                 })
