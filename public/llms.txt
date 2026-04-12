@@ -1,0 +1,28 @@
+# Hyon Technologies
+
+Next Generation IT Solutions, Web Development, and AI Automation.
+
+## Overview
+Hyon Technologies is a custom software development firm specialized in building scalable digital systems for startups and enterprises. We focus on performance-first engineering, intelligent automation, and data-driven intelligence.
+
+## Core Services
+- **Custom Digital Systems**: Web apps (Next.js, React), E-commerce, Enterprise ERP/CRM, Micro SaaS.
+- **Automation & AI**: Business Process Automation, Workflow Systems, AI Chatbots, Lead Management.
+- **Data & Intelligence**: Analytics Dashboards, Performance Intelligence, Predictive Solutions.
+- **Industry Platforms**: Bespoke solutions for Schools, Healthcare, Real Estate, Restaurants, and Gyms.
+
+## Our Tech Stack
+- Frontend: Next.js, React, Tailwind CSS, Framer Motion.
+- Backend: Node.js, Express, Python.
+- Database: PostgreSQL, Redis, Supabase.
+- Infrastructure: Vercel, AWS, Docker.
+
+## Contact Information
+- Website: https://hyontechnologies.online
+- Email: support@hyontechnologies.online
+- Location: Startup Research centre, Bengaluru, India
+
+## Open Source & Community
+- GitHub: https://github.com/hyontechnologies
+- LinkedIn: https://www.linkedin.com/company/hyon-technologies/
+- Twitter/X: https://x.com/Hyon_tech

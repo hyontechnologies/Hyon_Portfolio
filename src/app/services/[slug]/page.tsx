@@ -285,6 +285,25 @@ export default async function ServicePage({
         </div>
       </section>
 
+      {/* ─── Related Services ─────────────────────────────────────────── */}
+      <section className="relative z-10 py-16 px-4 border-t border-white/5 bg-white/[0.01]">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-12 text-center">Explore More Services</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {parent?.services.filter(s => s.slug !== slug).map((s, idx) => (
+              <Link
+                key={idx}
+                href={`/services/${s.slug}`}
+                className="group p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-purple-500/50 hover:bg-white/[0.05] transition-all duration-300"
+              >
+                <h3 className="text-white font-semibold group-hover:text-purple-400 transition-colors">{s.label}</h3>
+                <p className="text-xs text-gray-500 mt-2">Part of {parent.title}</p>
+              </Link>
+            )).slice(0, 3)}
+          </div>
+        </div>
+      </section>
+
       {/* ─── CTA ──────────────────────────────────────────────────────── */}
       <section className="relative z-10 py-16 px-4">
         <div className="max-w-3xl mx-auto text-center">

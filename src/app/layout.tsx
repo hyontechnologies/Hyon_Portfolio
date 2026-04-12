@@ -79,7 +79,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://hyontechnologies.online",
   },
-  category: "Technology",
+  category: "IT & Technology",
 };
 
 export const viewport: Viewport = {
@@ -96,20 +96,23 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: "Hyon Technologies",
   url: "https://hyontechnologies.online",
-  logo: "https://hyontechnologies.online/Hyon-Tech.png",
-  description:
-    "Next generation IT solutions for startups and growing businesses. Custom software development, AI automation, and cloud architecture.",
-  contactPoint: {
+  "logo": "https://hyontechnologies.online/Hyon-Tech.png",
+  "image": "https://hyontechnologies.online/Hyon-Tech.png",
+  "contactPoint": {
     "@type": "ContactPoint",
-    contactType: "sales",
-    availableLanguage: ["English"],
+    "telephone": "+91 7200012857",
+    "contactType": "customer service",
+    "areaServed": "IN",
+    "availableLanguage": "English"
   },
   sameAs: [
     "https://github.com/hyontechnologies",
     "https://www.linkedin.com/company/hyon-technologies/",
     "https://www.instagram.com/hyon_technologies",
-    "https://x.com/Hyon_tech",
+    "https://x.com/Hyon_tech"
   ],
+  "foundingDate": "2026",
+  "foundingLocation": "Bengaluru, India"
 };
 
 const serviceJsonLd = {
@@ -123,17 +126,17 @@ const serviceJsonLd = {
   },
   description:
     "Custom software development, AI automation, data analytics, and industry-specific smart platforms.",
-  areaServed: "Worldwide",
-  hasOfferCatalog: {
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    name: "IT Services",
-    itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Core Software Development & Digital Solutions" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Automation, AI & Workflow Systems" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Data, Analytics & Intelligence Systems" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Finance, Operations & Management Systems" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Business Productivity & Communication Platforms" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Industry-Specific Smart Platforms" } },
+    "name": "IT Services Portfolio",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Application Development" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Micro SaaS Development" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Automation & Workflow Systems" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom ERP/CRM Systems" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Data Analytics & Intelligence" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Industry-Specific Platforms" } },
     ],
   },
 };

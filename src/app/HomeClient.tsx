@@ -477,8 +477,27 @@ export default function HomeClient() {
             "name": "Hyon Technologies",
             "url": "https://hyontechnologies.online",
             "logo": "https://hyontechnologies.online/Hyon-Tech.png",
+            "image": "https://hyontechnologies.online/Hyon-Tech.png",
             "description": "Next generation IT solutions, web development, and affordable software for startups and growing businesses.",
             "foundingDate": "2026",
+            "priceRange": "$$ - $$$",
+            "telephone": "+91 7200012857, +91 9952470784, +91 9360852889",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Startup Research centre",
+              "addressLocality": "Bengaluru",
+              "addressRegion": "Karnataka",
+              "postalCode": "560037",
+              "addressCountry": "IN"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "21:00"
+              }
+            ],
             "sameAs": [
               "https://github.com/hyontechnologies",
               "https://www.linkedin.com/company/hyon-technologies/",
@@ -815,88 +834,144 @@ export default function HomeClient() {
             </motion.div>
           </section>
 
-          {/* ========= FOOTER ========= */}
-          <footer className="border-t border-white/10 bg-black/30 backdrop-blur-sm">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
-                {/* Brand and Internal Links */}
-                <div className="text-center md:text-left">
+          {/* FAQ SECTION — Strategic for SEO word count and Rich Results */}
+          <section id="faq" className="py-24 relative border-t border-white/5 bg-white/[0.01]">
+            <div className="max-w-4xl mx-auto px-4 text-center">
+              <div className="mb-16">
+                <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-4">Frequently Asked Questions</h2>
+                <p className="text-gray-400">Everything you need to know about our IT solutions and delivery process.</p>
+              </div>
+              <div className="grid gap-6 text-left">
+                {[
+                  {
+                    q: "What kind of custom software does Hyon Technologies build?",
+                    a: "We build end-to-end digital systems including custom web applications, enterprise ERP/CRM solutions, mobile apps, and AI-powered automation workflows. Each system is bespoke, engineered exactly to your business logic."
+                  },
+                  {
+                    q: "How long does a typical software development project take?",
+                    a: "For Micro SaaS or MVP projects, we typically ship in 8-12 weeks. Larger enterprise systems or complex AI integrations follow a phased rollout approach with active releases every 2 weeks."
+                  },
+                  {
+                    q: "Do you offer post-launch support and maintenance?",
+                    a: "Yes. Every project includes a post-launch monitoring phase. We also offer ongoing maintenance contracts that cover security patches, performance scaling, and feature updates."
+                  },
+                  {
+                    q: "How do you handle data security and compliance?",
+                    a: "Security is baked in from Day 1. We follow OWASP standards, implement role-based access control (RBAC), and ensure all sensitive data is encrypted at rest and in transit."
+                  }
+                ].map((faq, i) => (
+                  <div key={i} className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 transition-colors hover:bg-white/[0.05]">
+                    <h3 className="text-lg font-semibold text-white mb-2">{faq.q}</h3>
+                    <p className="text-gray-400 leading-relaxed text-sm sm:text-base">{faq.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* FAQ JSON-LD */}
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "FAQPage",
+                  "mainEntity": [
+                    {
+                      "@type": "Question",
+                      "name": "What kind of custom software does Hyon Technologies build?",
+                      "acceptedAnswer": { "@type": "Answer", "text": "We build end-to-end digital systems including custom web applications, enterprise ERP/CRM solutions, mobile apps, and AI-powered automation workflows." }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "How long does a typical software development project take?",
+                      "acceptedAnswer": { "@type": "Answer", "text": "For Micro SaaS or MVP projects, we typically ship in 8-12 weeks. Larger enterprise systems follow a phased rollout." }
+                    }
+                  ]
+                })
+              }}
+            />
+          </section>
+
+          {/* ========= ENHANCED FOOTER ========= */}
+          <footer className="border-t border-white/10 bg-black/30 backdrop-blur-sm pt-20 pb-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                {/* Brand Column */}
+                <div className="space-y-6">
                   <Image
                     src="/Hyon-Tech.png"
                     alt="Hyon Technologies Logo"
                     width={180}
                     height={60}
-                    className="w-auto h-10 object-contain mb-2"
+                    className="w-auto h-10 object-contain mb-4"
                   />
-                  <p className="mt-2 text-sm text-gray-500 leading-relaxed max-w-sm mb-4">
-                    Next generation IT solutions, web development, and affordable software for startups and growing businesses.
+                  <p className="text-sm text-gray-400 leading-relaxed">
+                    Next generation IT solutions for startups and growing businesses.
+                    We build the digital backbone of modern enterprises.
                   </p>
-                  <nav aria-label="Footer navigation" className="flex flex-wrap gap-4 justify-center md:justify-start text-xs text-gray-400">
-                    <a href="#about" className="hover:text-purple-400 transition-colors">About</a>
-                    <a href="#features" className="hover:text-purple-400 transition-colors">Services</a>
-                    <a href="#clients" className="hover:text-purple-400 transition-colors">Portfolio</a>
-                    <button onClick={() => setIsContactModalOpen(true)} className="hover:text-purple-400 transition-colors cursor-pointer">Contact</button>
-                  </nav>
+                  <div className="flex gap-4">
+                    <a href="https://github.com/hyontechnologies" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors" aria-label="GitHub">
+                      <svg viewBox="0 0 16 16" fill="currentColor" className="h-5 w-5" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" /></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/hyon-technologies/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors" aria-label="LinkedIn">
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z" /></svg>
+                    </a>
+                    <a href="https://x.com/Hyon_tech" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors" aria-label="X (Twitter)">
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" xmlns="http://www.w3.org/2000/svg"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.494h2.039L6.486 3.24H4.298l13.311 17.407z" /></svg>
+                    </a>
+                  </div>
                 </div>
 
-                {/* Social Icons */}
-                <div className="flex items-center gap-3">
-                  {/* Squircle clip path definition */}
-                  <svg width={0} height={0} style={{ position: 'absolute' }}>
-                    <defs>
-                      <clipPath id="squircleClip" clipPathUnits="objectBoundingBox">
-                        <path d="M 0,0.5 C 0,0 0,0 0.5,0 S 1,0 1,0.5 1,1 0.5,1 0,1 0,0.5" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  {/* GitHub */}
-                  <a href="https://github.com/hyontechnologies" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <div style={{ clipPath: 'url(#squircleClip)' }} className="w-11 h-11 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center shadow-lg border border-gray-600/50 cursor-pointer transform transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-1 hover:shadow-2xl">
-                      <svg viewBox="0 0 16 16" fill="currentColor" className="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                      </svg>
-                    </div>
-                  </a>
-                  {/* LinkedIn */}
-                  <a href="https://www.linkedin.com/company/hyon-technologies/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <div style={{ clipPath: 'url(#squircleClip)' }} className="w-11 h-11 bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center shadow-lg border border-blue-500/50 cursor-pointer transform transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-1 hover:shadow-2xl">
-                      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                      </svg>
-                    </div>
-                  </a>
-                  {/* X (Twitter) */}
-                  <a href="https://x.com/Hyon_tech" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
-                    <div style={{ clipPath: 'url(#squircleClip)' }} className="w-11 h-11 bg-black flex items-center justify-center shadow-lg border border-white/10 cursor-pointer transform transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-1 hover:shadow-2xl">
-                      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.494h2.039L6.486 3.24H4.298l13.311 17.407z" />
-                      </svg>
-                    </div>
-                  </a>
-                  {/* YouTube */}
-                  <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                    <div style={{ clipPath: 'url(#squircleClip)' }} className="w-11 h-11 bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center shadow-lg border border-red-500/50 cursor-pointer transform transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-1 hover:shadow-2xl">
-                      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                      </svg>
-                    </div>
-                  </a>
-                  {/* Instagram */}
-                  <a href="https://www.instagram.com/hyon_technologies?igsh=MW1nNHY5dnJoZzl1YQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <div style={{ clipPath: 'url(#squircleClip)' }} className="w-11 h-11 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 flex items-center justify-center shadow-lg border border-pink-500/50 cursor-pointer transform transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-1 hover:shadow-2xl">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                        <circle cx="12" cy="12" r="5" />
-                        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
-                      </svg>
-                    </div>
-                  </a>
+                {/* Categories Column */}
+                <div>
+                  <h4 className="text-white font-semibold mb-6">Categories</h4>
+                  <ul className="space-y-4 text-sm text-gray-400">
+                    <li><Link href="/category/custom-digital-systems" className="hover:text-purple-400 transition-colors">Custom Digital Systems</Link></li>
+                    <li><Link href="/category/automation-ai-workflow" className="hover:text-purple-400 transition-colors">Automation & AI</Link></li>
+                    <li><Link href="/category/data-analytics-intelligence" className="hover:text-purple-400 transition-colors">Data & Analytics</Link></li>
+                    <li><Link href="/category/finance-operations-management" className="hover:text-purple-400 transition-colors">Finance & Operations</Link></li>
+                    <li><Link href="/category/industry-specific-platforms" className="hover:text-purple-400 transition-colors">Industry Platforms</Link></li>
+                  </ul>
+                </div>
+
+                {/* Popular Services Column */}
+                <div>
+                  <h4 className="text-white font-semibold mb-6">Popular Services</h4>
+                  <ul className="space-y-4 text-sm text-gray-400">
+                    <li><Link href="/services/web-application-development" className="hover:text-purple-400 transition-colors">Web Apps</Link></li>
+                    <li><Link href="/services/micro-saas-development" className="hover:text-purple-400 transition-colors">Micro SaaS</Link></li>
+                    <li><Link href="/services/ai-chatbots-virtual-assistants" className="hover:text-purple-400 transition-colors">AI Chatbots</Link></li>
+                    <li><Link href="/services/mobile-application-development" className="hover:text-purple-400 transition-colors">Mobile Apps</Link></li>
+                    <li><Link href="/services/api-development-integrations" className="hover:text-purple-400 transition-colors">API Integrations</Link></li>
+                  </ul>
+                </div>
+
+                {/* Contact Column */}
+                <div>
+                  <h4 className="text-white font-semibold mb-6">Contact & Support</h4>
+                  <ul className="space-y-4 text-sm text-gray-400">
+                    <li className="flex items-center gap-3">
+                      <svg className="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                      <a href="mailto:support@hyontechnologies.online" className="hover:text-purple-400">support@hyontechnologies.online</a>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <svg className="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1.01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                      <span>+91 7200012857</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <svg className="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                      <span>Startup Research centre, Bengaluru</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
-            </div>
-            <div className="border-t border-white/10">
-              <div className="max-w-7xl mx-auto px-4 py-5 text-center">
-                <p className="text-sm text-gray-500">© 2026 Hyon Technologies. All rights reserved.</p>
+
+              {/* Bottom Copyright and Legal Links */}
+              <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p className="text-xs text-gray-500">© 2026 Hyon Technologies. All rights reserved.</p>
+                <div className="flex gap-6 text-xs text-gray-500">
+                  <Link href="/sitemap.xml" className="hover:text-gray-300">Sitemap</Link>
+                  <Link href="/robots.txt" className="hover:text-gray-300">Robots</Link>
+                </div>
               </div>
             </div>
           </footer>
