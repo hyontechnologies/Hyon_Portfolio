@@ -833,35 +833,64 @@ export default function HomeClient() {
 
           {/* FAQ SECTION — Strategic for SEO word count and Rich Results */}
           <section id="faq" className="py-24 relative border-t border-white/5 bg-white/[0.01]">
-            <div className="max-w-4xl mx-auto px-4 text-center">
-              <div className="mb-16">
-                <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-4">Frequently Asked Questions</h2>
-                <p className="text-gray-400">Everything you need to know about our IT solutions and delivery process.</p>
-              </div>
-              <div className="grid gap-6 text-left">
-                {[
-                  {
-                    q: "What kind of custom software does Hyon Technologies build?",
-                    a: "We build end-to-end digital systems including custom web applications, enterprise ERP/CRM solutions, mobile apps, and AI-powered automation workflows. Each system is bespoke, engineered exactly to your business logic."
-                  },
-                  {
-                    q: "How long does a typical software development project take?",
-                    a: "The development timeline varies depending upon the project and its requirements. Smaller systems typically ship fast, while larger enterprise solutions follow a phased rollout approach."
-                  },
-                  {
-                    q: "Do you offer post-launch support and maintenance?",
-                    a: "Yes. Every project includes a post-launch monitoring phase. We also offer ongoing maintenance contracts that cover security patches, performance scaling, and feature updates."
-                  },
-                  {
-                    q: "How do you handle data security and compliance?",
-                    a: "Security is baked in from Day 1. We follow OWASP standards, implement role-based access control (RBAC), and ensure all sensitive data is encrypted at rest and in transit."
-                  }
-                ].map((faq, i) => (
-                  <div key={i} className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 transition-colors hover:bg-white/[0.05]">
-                    <h3 className="text-lg font-semibold text-white mb-2">{faq.q}</h3>
-                    <p className="text-gray-400 leading-relaxed text-sm sm:text-base">{faq.a}</p>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="lg:grid lg:grid-cols-12 lg:gap-20">
+                {/* Left Column — Sticky Header */}
+                <div className="lg:col-span-4 mb-16 lg:mb-0">
+                  <div className="lg:sticky lg:top-32 h-fit">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
+                      Frequently <br />
+                      Asked <br />
+                      Questions
+                    </h2>
+                    <p className="text-gray-400 text-lg max-w-sm">
+                      Everything you need to know about our IT solutions, delivery process, and post-launch support.
+                    </p>
+                    <div className="mt-8 hidden lg:block">
+                      <div className="w-12 h-1 bg-purple-500/50 rounded-full" />
+                    </div>
                   </div>
-                ))}
+                </div>
+
+                {/* Right Column — Scrolling FAQ Items */}
+                <div className="lg:col-span-8">
+                  <div className="grid gap-6">
+                    {[
+                      {
+                        q: "What kind of custom software does Hyon Technologies build?",
+                        a: "We build end-to-end digital systems including custom web applications, enterprise ERP/CRM solutions, mobile apps, and AI-powered automation workflows. Each system is bespoke, engineered exactly to your business logic."
+                      },
+                      {
+                        q: "How long does a typical software development project take?",
+                        a: "The development timeline varies depending upon the project and its requirements. Smaller systems typically ship fast, while larger enterprise solutions follow a phased rollout approach."
+                      },
+                      {
+                        q: "Do you offer post-launch support and maintenance?",
+                        a: "Yes. Every project includes a post-launch monitoring phase. We also offer ongoing maintenance contracts that cover security patches, performance scaling, and feature updates."
+                      },
+                      {
+                        q: "How do you handle data security and compliance?",
+                        a: "Security is baked in from Day 1. We follow OWASP standards, implement role-based access control (RBAC), and ensure all sensitive data is encrypted at rest and in transit."
+                      }
+                    ].map((faq, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.5, delay: i * 0.1 }}
+                        className="group p-8 rounded-3xl bg-white/[0.03] border border-white/10 transition-all duration-300 hover:bg-white/[0.06] hover:border-purple-500/30"
+                      >
+                        <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-purple-400 transition-colors">
+                          {faq.q}
+                        </h3>
+                        <p className="text-gray-400 leading-relaxed text-base">
+                          {faq.a}
+                        </p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
             {/* FAQ JSON-LD */}
