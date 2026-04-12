@@ -26,12 +26,12 @@ export async function generateMetadata({
     title: service.title,
     description: service.description,
     alternates: {
-      canonical: `https://hyon.tech/services/${slug}`,
+      canonical: `https://hyontechnologies.online/services/${slug}`,
     },
     openGraph: {
       title: `${service.title} | Hyon Technologies`,
       description: service.description,
-      url: `https://hyon.tech/services/${slug}`,
+      url: `https://hyontechnologies.online/services/${slug}`,
       type: "website",
     },
     twitter: {
@@ -93,20 +93,20 @@ export default async function ServicePage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://hyon.tech" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://hyontechnologies.online" },
       ...(parent
         ? [
             {
               "@type": "ListItem",
               position: 2,
               name: parent.title,
-              item: `https://hyon.tech/category/${parent.slug}`,
+              item: `https://hyontechnologies.online/category/${parent.slug}`,
             },
             {
               "@type": "ListItem",
               position: 3,
               name: service.title,
-              item: `https://hyon.tech/services/${slug}`,
+              item: `https://hyontechnologies.online/services/${slug}`,
             },
           ]
         : [
@@ -114,7 +114,7 @@ export default async function ServicePage({
               "@type": "ListItem",
               position: 2,
               name: service.title,
-              item: `https://hyon.tech/services/${slug}`,
+              item: `https://hyontechnologies.online/services/${slug}`,
             },
           ]),
     ],
@@ -128,7 +128,7 @@ export default async function ServicePage({
     provider: {
       "@type": "Organization",
       name: "Hyon Technologies",
-      url: "https://hyon.tech",
+      url: "https://hyontechnologies.online",
     },
     areaServed: "Worldwide",
     serviceType: service.title,

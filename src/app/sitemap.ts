@@ -3,7 +3,7 @@ import { categoriesData } from "@/services/categoriesData";
 import { allServiceSlugs } from "@/services/servicesData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://hyon.tech";
+  const baseUrl = "https://hyontechnologies.online";
 
   // ─── Static pages ────────────────────────────────────────────────────────
   const staticPages: MetadataRoute.Sitemap = [

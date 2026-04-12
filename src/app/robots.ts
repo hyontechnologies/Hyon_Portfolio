@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/"],
       },
     ],
-    sitemap: "https://hyon.tech/sitemap.xml",
+    sitemap: "https://hyontechnologies.online/sitemap.xml",
   };
 }

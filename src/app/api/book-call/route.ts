@@ -34,7 +34,7 @@ export async function POST(req: Request) {
 
     // 2. Send User Confirmation Email (priority)
     const userResult = await resend.emails.send({
-      from: 'Hyon Technologies <onboarding@resend.dev>',
+      from: 'Hyon Technologies <support@hyontechnologies.online>',
       to: email,
       subject: 'Call Confirmation - Hyon Technologies',
       react: UserConfirmationEmail({ name }),
@@ -48,7 +48,7 @@ export async function POST(req: Request) {
     // 3. Send Admin Notification (best-effort — don't block the user response)
     try {
       const adminResult = await resend.emails.send({
-        from: 'Hyon Technologies <onboarding@resend.dev>',
+        from: 'Hyon Technologies <support@hyontechnologies.online>',
         to: process.env.ADMIN_EMAIL!,
         subject: `📞 New Call Booking: ${name}`,
         text: [

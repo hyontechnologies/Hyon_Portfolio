@@ -26,12 +26,12 @@ export async function generateMetadata({
     title: `${cat.title} — Services`,
     description: cat.tagline,
     alternates: {
-      canonical: `https://hyon.tech/category/${slug}`,
+      canonical: `https://hyontechnologies.online/category/${slug}`,
     },
     openGraph: {
       title: `${cat.title} | Hyon Technologies`,
       description: cat.tagline,
-      url: `https://hyon.tech/category/${slug}`,
+      url: `https://hyontechnologies.online/category/${slug}`,
       type: "website",
     },
     twitter: {
@@ -59,12 +59,12 @@ export default async function CategoryPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://hyon.tech" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://hyontechnologies.online" },
       {
         "@type": "ListItem",
         position: 2,
         name: category.title,
-        item: `https://hyon.tech/category/${slug}`,
+        item: `https://hyontechnologies.online/category/${slug}`,
       },
     ],
   };
@@ -79,7 +79,7 @@ export default async function CategoryPage({
       "@type": "ListItem",
       position: idx + 1,
       name: service.label,
-      url: `https://hyon.tech/services/${service.slug}`,
+      url: `https://hyontechnologies.online/services/${service.slug}`,
     })),
   };
 

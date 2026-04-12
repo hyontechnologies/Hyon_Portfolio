@@ -475,8 +475,8 @@ export default function HomeClient() {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Hyon Technologies",
-            "url": "https://hyon.tech",
-            "logo": "https://hyon.tech/Hyon-Tech.png",
+            "url": "https://hyontechnologies.online",
+            "logo": "https://hyontechnologies.online/Hyon-Tech.png",
             "description": "Next generation IT solutions, web development, and affordable software for startups and growing businesses.",
             "foundingDate": "2026",
             "sameAs": [
@@ -490,7 +490,7 @@ export default function HomeClient() {
       />
 
       {/* Brand Logo — Extracted out of main to guarantee fixed positioning without transform trapping */}
-      <div className="fixed top-2 left-6 sm:top-4 sm:left-8 z-[9999] pointer-events-none select-none">
+      <div className="fixed top-0 left-6 sm:top-4 sm:left-8 z-[9999] pointer-events-none select-none">
         <Image
           src="/Hyon-Tech.png"
           alt="Hyon Technologies Logo"

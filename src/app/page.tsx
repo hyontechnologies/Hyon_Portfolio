@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Hyon Technologies delivers scalable software development, AI-powered automation, and full-stack IT solutions for startups and growing businesses. Custom web apps, cloud architecture, and intelligent systems — built fast, priced right.",
   alternates: {
-    canonical: "https://hyon.tech",
+    canonical: "https://hyontechnologies.online",
   },
 };
 

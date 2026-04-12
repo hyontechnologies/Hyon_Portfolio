@@ -3,6 +3,7 @@ import "./globals.css";
 import { Geist } from "next/font/google";
 import { Space_Grotesk } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { Analytics } from "@vercel/analytics/next";
 
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
@@ -16,7 +17,7 @@ const spaceGrotesk = Space_Grotesk({
 // ─── SEO Metadata ──────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hyon.tech"),
+  metadataBase: new URL("https://hyontechnologies.online"),
   title: {
     default: "Hyon Technologies | Next Generation IT Solutions",
     template: "%s | Hyon Technologies",
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://hyon.tech",
+    url: "https://hyontechnologies.online",
     siteName: "Hyon Technologies",
     title: "Hyon Technologies | Next Generation IT Solutions",
     description:
@@ -76,7 +77,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://hyon.tech",
+    canonical: "https://hyontechnologies.online",
   },
   category: "Technology",
 };
@@ -94,8 +95,8 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Hyon Technologies",
-  url: "https://hyon.tech",
-  logo: "https://hyon.tech/Hyon-Tech.png",
+  url: "https://hyontechnologies.online",
+  logo: "https://hyontechnologies.online/Hyon-Tech.png",
   description:
     "Next generation IT solutions for startups and growing businesses. Custom software development, AI automation, and cloud architecture.",
   contactPoint: {
@@ -118,7 +119,7 @@ const serviceJsonLd = {
   provider: {
     "@type": "Organization",
     name: "Hyon Technologies",
-    url: "https://hyon.tech",
+    url: "https://hyontechnologies.online",
   },
   description:
     "Custom software development, AI automation, data analytics, and industry-specific smart platforms.",
@@ -141,7 +142,7 @@ const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Hyon Technologies",
-  url: "https://hyon.tech",
+  url: "https://hyontechnologies.online",
   description: "Next generation IT solutions for startups and growing businesses.",
   publisher: {
     "@type": "Organization",
@@ -190,6 +191,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased min-h-screen bg-[#0a0118] text-foreground overflow-y-auto overscroll-none relative" style={{ position: 'relative' }}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
