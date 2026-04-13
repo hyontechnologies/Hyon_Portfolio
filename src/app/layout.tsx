@@ -80,6 +80,11 @@ export const metadata: Metadata = {
     canonical: "https://hyontechnologies.online",
   },
   category: "IT & Technology",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/Hyon-Tech.png",
+    apple: "/Hyon-Tech.png",
+  },
 };
 
 export const viewport: Viewport = {
