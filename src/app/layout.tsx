@@ -93,14 +93,29 @@ export const metadata: Metadata = {
     ],
   },
 
-  export const viewport: Viewport = {
-    themeColor: "#0a0118",
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  };
+ export const metadata: Metadata = {
+  // ...all your metadata...
+  icons: {
+    icon: [
+      { url: "/favicon.ico",   sizes: "48x48",   type: "image/x-icon" },
+      { url: "/Hyon-Tech.png", sizes: "32x32",   type: "image/png" },
+      { url: "/Hyon-Tech.png", sizes: "192x192", type: "image/png" },
+      { url: "/Hyon-Tech.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: [{ url: "/Hyon-Tech.png", type: "image/png" }],
+    apple: [
+      { url: "/Hyon-Tech.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+};                             
 
-  // ─── JSON-LD Structured Data ───────────────────────────────────────────────
+export const viewport: Viewport = {
+  themeColor: "#0a0118",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 
   const organizationJsonLd = {
     "@context": "https://schema.org",
